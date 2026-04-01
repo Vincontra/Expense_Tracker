@@ -4,7 +4,7 @@ This document contains all the important commands and steps required to run, dep
 
 ---
 
-# 🔐 1. Connect to EC2
+# 1. Connect to EC2
 
 ```bash
 chmod 400 yourkey.pem
@@ -13,7 +13,7 @@ ssh -i yourkey.pem ubuntu@<EC2-PUBLIC-IP>
 
 ---
 
-# 🔁 2. After EC2 Restart (VERY IMPORTANT)
+# 2. After EC2 Restart (VERY IMPORTANT)
 
 ```bash
 sudo systemctl start k3s
@@ -24,7 +24,7 @@ export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 
 ---
 
-# 🔍 3. Check Kubernetes Cluster
+# 3. Check Kubernetes Cluster
 
 ```bash
 kubectl get nodes
@@ -33,7 +33,7 @@ kubectl get pods -A
 
 ---
 
-# 🚀 4. Deploy Application (if needed)
+# 4. Deploy Application (if needed)
 
 ```bash
 kubectl apply -f deployment.yaml
@@ -42,7 +42,7 @@ kubectl apply -f service.yaml
 
 ---
 
-# 🔍 5. Check Application Status
+# 5. Check Application Status
 
 ```bash
 kubectl get pods
@@ -51,7 +51,7 @@ kubectl get svc
 
 ---
 
-# 🌐 6. Access Application
+# 6. Access Application
 
 ```
 http://<EC2-PUBLIC-IP>:30007
@@ -59,7 +59,7 @@ http://<EC2-PUBLIC-IP>:30007
 
 ---
 
-# 🔄 7. Restart Pods (Manual Fix)
+# 7. Restart Pods (Manual Fix)
 
 ```bash
 kubectl rollout restart deployment expense-tracker
@@ -67,7 +67,7 @@ kubectl rollout restart deployment expense-tracker
 
 ---
 
-# 🛠️ 8. Debug Commands
+# 8. Debug Commands
 
 ```bash
 kubectl logs <pod-name>
@@ -77,7 +77,7 @@ kubectl get pods -w
 
 ---
 
-# 📦 9. Check Deployment/Image
+# 9. Check Deployment/Image
 
 ```bash
 kubectl get pods -o wide
@@ -85,7 +85,7 @@ kubectl get pods -o wide
 
 ---
 
-# ⚙️ 10. Trigger CI/CD Pipeline
+# 10. Trigger CI/CD Pipeline
 
 ```bash
 git add .
@@ -101,7 +101,7 @@ git push
 
 ---
 
-# 🔑 11. If Public IP Changes
+# 11. If Public IP Changes
 
 Update the following:
 
@@ -110,7 +110,7 @@ Update the following:
 
 ---
 
-# 💾 12. Swap Memory (One-time Setup)
+# 12. Swap Memory (One-time Setup)
 
 ```bash
 sudo fallocate -l 1G /swapfile
@@ -129,7 +129,7 @@ free -h
 ---
 
 
-# 🔄 Complete Flow
+# Complete Flow
 
 ```
 Code → Git Push → GitHub Actions → Docker Hub → EC2 → Kubernetes → Live App
