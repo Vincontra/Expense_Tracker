@@ -1,4 +1,4 @@
-# 🚀 Expense Tracker DevOps Deployment Guide
+# Expense Tracker DevOps Deployment Guide
 
 This document contains all the important commands and steps required to run, deploy, and maintain the Expense Tracker project using Docker, Kubernetes (K3s), AWS EC2, and CI/CD.
 
