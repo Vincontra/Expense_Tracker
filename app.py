@@ -25,7 +25,7 @@ class Expense(db.Model):
 with app.app_context():
     db.create_all()
 
-CATEGORIES=['Food','Transport','Rent','Utilities','Health']
+CATEGORIES=['Food','Transport','Rent','Utilities','Health','Other']
 
 
 def parse_date_or_none(s: str):
